@@ -163,6 +163,13 @@ a {
     font-size: 1.3rem;
 }
 
+.trailer-video {
+    width: 100%;
+    margin-bottom: 10%;
+    min-height: 475px;
+    border: none;
+}
+
 .coming-soon-wrap h3 {
     padding: 10px 0;
 }
@@ -556,5 +563,9 @@ a {
         grid-gap: 10px;
         grid-template-columns: repeat(4, 1fr);
         margin-bottom: 10%;
+    }
+
+    .trailer-video {
+        min-height: 200px;
     }
 }
