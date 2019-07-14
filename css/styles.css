@@ -170,19 +170,35 @@ a {
     border: none;
 }
 
+.coming-soon-content-second,
+.coming-soon-content-wrap-first, 
+.coming-soon-content-wrap-second, 
+.coming-soon-content-wrap-third {
+    border-bottom: 2px solid #BD2525;
+    padding-bottom: 5px;
+}
+
+.heading-wrap,
+.latest-news-content,
+.header-wrap,
+.coming-soon-heading-wrap,
+.coming-soon-content,
+.review-body-content p,
+.coming-soon-content-second h3 {
+    text-align: left;
+}
+
+.coming-soon-content-second h3 {
+    padding: 8px 0;
+}
+
 .coming-soon-wrap h3 {
-    padding: 10px 0;
+    padding: 15px 0;
 }
 
 .coming-soon-content-wrap-first h3 {
     font-size: 1.4rem;
     padding-bottom: 18px;
-}
-
-.coming-soon-content-wrap-first,
-.coming-soon-content-wrap-second,
-.coming-soon-content-wrap-third {
-    border-bottom: 1px solid #BD2525;
 }
 
 .coming-soon-content p {
@@ -455,12 +471,6 @@ a {
         font-size: 0.9rem;
     }
 
-    .heading-wrap,
-    .coming-soon-heading-wrap {
-        border-bottom: 2px solid #BD2525;
-        padding-bottom: 5px;
-    }
-
     .latest-news-wrap,
     .heading-wrap,
     .coming-soon-heading-wrap,
@@ -469,15 +479,12 @@ a {
     .review-body-wrap {
         margin: 10% 5%;
     }
-    
+
     .heading-wrap,
-    .latest-news-content,
-    .header-wrap,
-    .coming-soon-heading-wrap,
-    .coming-soon-content,
-    .review-body-content p {
-        text-align: left;
-    }
+    .coming-soon-heading-wrap {
+        border-bottom: 2px solid #BD2525;
+        padding-bottom: 8px;
+    }    
 
     .header-wrap {
         width: 90%;
