@@ -11,4 +11,16 @@ closeNav.addEventListener('click', function() {
     mainNav.style.display = 'none';
 });
 
-// Create lightbox for game image gallery
+// Create game image gallery
+const currentImage = document.querySelector('#current');
+const imageGallery = document.querySelectorAll('.review-gallery-image');
+
+function selectedImage(e) {
+    currentImage.src = e.target.src;
+
+    currentImage.classList.add('fade-in');
+
+    setTimeout(() => currentImage.classList.remove('fade-in'), 500);
+}
+
+imageGallery.forEach(img => img.addEventListener('click', selectedImage));
