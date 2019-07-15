@@ -10,7 +10,38 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<div class="main">
+        <div id="modal">
+                <div class="modal-wrap">
+                        <div class="logo modal-logo">
+                            <a><span class="logo-colour"><i class="fas fa-gamepad"></i> Game</span> on</a>
+                        </div>               
+                        <span class="close-modal-sign-up">+</span>
+                        <h3>Hey there! Why not sign up for our newsletter?</h3>
+                            <div id="error"></div>
+                            <div id="success"></div>
+                            <form id="form">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" placeholder="Enter your email">
+                                <label for="password">Password:</label>
+                                <input type="password" id="password">
+                                <input type="submit" value="Submit" id="modal-btn">
+                            </form>
+                </div>
+        </div>
+    
+        <div id="thank-you-modal">
+                <div class="modal-wrap">
+                        <div class="logo modal-logo">
+                            <a><span class="logo-colour"><i class="fas fa-gamepad"></i> Game</span> on</a>
+                        </div>               
+                        <span class="close-modal-sign-up">+</span>
+                        <h3>Thank you! Welcome aboard!</h3>
+                            <div class="success">
+                                <p>You will now receive all of the latest gaming news and reviews.</p>
+                            </div>
+                </div>        
+        </div>
+
     <div class="top-bar">
             <div class="top-bar-wrap">
                     <div class="logo">
@@ -30,11 +61,11 @@
                         <li>Nintendo Switch</li>
                         <li>Reviews</li>
                         <li>Videos</li>
+                        <li id="sign-up">Sign Up</li>                        
                     </ul>
                 </nav>
             </div>
     </div>
-</div>
 
     <header class="review-banner">
         <div class="review-wrap">
