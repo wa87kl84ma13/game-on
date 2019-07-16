@@ -23,7 +23,6 @@ $('.close').click(function() {
 });
 
 // Create game image gallery
-/*
 const currentImage = document.querySelector('#current');
 const imageGallery = document.querySelectorAll('.review-gallery-image');
 
@@ -36,14 +35,6 @@ function selectedImage(e) {
 }
 
 imageGallery.forEach(img => img.addEventListener('click', selectedImage));
-*/
-
-// JQUERY EQUIVALENT IMAGE GALLERY
-$('.review-gallery-image').click(function() {
-    var images = $(this).attr('src');
-     $('#current').attr('src', images);
-});
-
 
 // Close modal
 const closeModalBox = document.querySelector('.close-modal-sign-up');
