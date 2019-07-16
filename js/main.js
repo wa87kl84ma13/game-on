@@ -1,4 +1,5 @@
 // Open and close hamburger menu for mobile devices
+/*
 const hamburgerMenu = document.querySelector('.hamburger-menu');
 const mainNav = document.querySelector('.main-nav');
 const closeNav = document.querySelector('.close');
@@ -10,8 +11,19 @@ hamburgerMenu.addEventListener('click', function() {
 closeNav.addEventListener('click', function() {
         mainNav.style.display = 'none';
 });
+*/
+
+// JQUERY EQUIVALENT EVENT LISTENER CLICK
+$('.hamburger-menu').click(function(){
+    $('.main-nav').slideDown();
+  });
+
+$('.close').click(function() {
+    $('.main-nav').slideUp();
+});
 
 // Create game image gallery
+/*
 const currentImage = document.querySelector('#current');
 const imageGallery = document.querySelectorAll('.review-gallery-image');
 
@@ -24,6 +36,14 @@ function selectedImage(e) {
 }
 
 imageGallery.forEach(img => img.addEventListener('click', selectedImage));
+*/
+
+// JQUERY EQUIVALENT IMAGE GALLERY
+$('.review-gallery-image').click(function() {
+    var images = $(this).attr('src');
+     $('#current').attr('src', images);
+});
+
 
 // Close modal
 const closeModalBox = document.querySelector('.close-modal-sign-up');
@@ -41,7 +61,7 @@ const thankYouModal = document.querySelector('#thank-you-modal');
 
 function loadModal() {
     signUpModal.style.display = 'block';
-    if (window.matchMedia("(max-width: 480px)").matches) {
+    if (window.matchMedia("(min-width: 320px) and (max-width: 768px)").matches) {
          mainNav.style.display = 'none';
     } else {
         console.log('error');
