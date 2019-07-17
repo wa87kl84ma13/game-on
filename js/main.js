@@ -4,11 +4,11 @@ const mainNav = document.querySelector('.main-nav');
 const closeNav = document.querySelector('.close');
 
 // JQUERY EQUIVALENT EVENT LISTENER CLICK
-$('.hamburger-menu').on('click touchstart', function(){
+$('.hamburger-menu').on('click', function(){
     $('.main-nav').slideDown();
   });
 
-$('.close').on('click touchstart', function() {
+$('.close').on('click', function() {
     $('.main-nav').slideUp();
 });
 
