@@ -1,14 +1,14 @@
 // Open and close hamburger menu for mobile devices
-const hamburgerMenu = document.querySelector('.hamburger-menu');
+/*const hamburgerMenu = document.querySelector('.hamburger-menu');
 const mainNav = document.querySelector('.main-nav');
-const closeNav = document.querySelector('.close');
+const closeNav = document.querySelector('.close');*/
 
 // JQUERY EQUIVALENT EVENT LISTENER CLICK
-$('.hamburger-menu').on('click tap', function(){
+$('.hamburger-menu').on('click touchstart', function(){
     $('.main-nav').slideDown();
   });
 
-$('.close').on('click tap', function() {
+$('.close').on('click touchstart', function() {
     $('.main-nav').slideUp();
 });
 
