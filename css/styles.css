@@ -91,6 +91,7 @@ a {
     width: 3%;
     display: none;
     cursor: pointer;
+    z-index: 10000;
 }
 
 .line {
