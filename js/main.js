@@ -4,16 +4,13 @@ const mainNav = document.querySelector('.main-nav');
 const closeNav = document.querySelector('.close');
 
 // JQUERY EQUIVALENT EVENT LISTENER CLICK
-$('.hamburger-menu').on('click', function(){
+$('.hamburger-menu').on('click tap', function(){
     $('.main-nav').slideDown();
   });
 
-$('.close').on('click', function() {
+$('.close').on('click tap', function() {
     $('.main-nav').slideUp();
 });
-
-hamburgerMenu.addEventListener('touchstart', () => {});
-closeNav.addEventListener('touchstart', () => {});
 
 /*
 hamburgerMenu.addEventListener('click', function() {
