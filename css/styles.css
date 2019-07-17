@@ -90,6 +90,7 @@ a {
     padding: 10px;
     width: 3%;
     display: none;
+    cursor: pointer;
 }
 
 .line {
