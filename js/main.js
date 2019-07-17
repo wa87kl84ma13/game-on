@@ -1,9 +1,18 @@
 // Open and close hamburger menu for mobile devices
-/*
 const hamburgerMenu = document.querySelector('.hamburger-menu');
 const mainNav = document.querySelector('.main-nav');
 const closeNav = document.querySelector('.close');
 
+// JQUERY EQUIVALENT EVENT LISTENER CLICK
+$('.hamburger-menu').on('click touchstart', function(){
+    $('.main-nav').slideDown();
+  });
+
+$('.close').on('click touchstart', function() {
+    $('.main-nav').slideUp();
+});
+
+/*
 hamburgerMenu.addEventListener('click', function() {
     mainNav.style.display = 'block';
 });
@@ -12,15 +21,6 @@ closeNav.addEventListener('click', function() {
         mainNav.style.display = 'none';
 });
 */
-
-// JQUERY EQUIVALENT EVENT LISTENER CLICK
-$('.hamburger-menu').click(function(){
-    $('.main-nav').slideDown();
-  });
-
-$('.close').click(function() {
-    $('.main-nav').slideUp();
-});
 
 // Create game image gallery
 const currentImage = document.querySelector('#current');
