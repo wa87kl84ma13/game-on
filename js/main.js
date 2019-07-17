@@ -12,6 +12,9 @@ $('.close').on('click', function() {
     $('.main-nav').slideUp();
 });
 
+hamburgerMenu.addEventListener('touchstart', () => {});
+closeNav.addEventListener('touchstart', () => {});
+
 /*
 hamburgerMenu.addEventListener('click', function() {
     mainNav.style.display = 'block';
