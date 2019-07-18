@@ -885,6 +885,10 @@ input {
         right: 30px;
         top: 0;
     }
+    
+    .header-banner {
+        height: 85vh;
+    }
 
     #review-gallery,
     .review-body-wrap {
