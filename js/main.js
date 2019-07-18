@@ -1,14 +1,16 @@
 // Open and close hamburger menu for mobile devices
-/*const hamburgerMenu = document.querySelector('.hamburger-menu');
+/*
+const hamburgerMenu = document.querySelector('.hamburger-menu');
 const mainNav = document.querySelector('.main-nav');
-const closeNav = document.querySelector('.close');*/
+const closeNav = document.querySelector('.close');
+*/
 
 // JQUERY EQUIVALENT EVENT LISTENER CLICK
-$('.hamburger-menu').on('click touchstart', function(){
+$('.hamburger-menu').bind('click touchstart', function(){
     $('.main-nav').slideDown();
   });
 
-$('.close').on('click touchstart', function() {
+$('.close').bind('click touchstart', function() {
     $('.main-nav').slideUp();
 });
 
@@ -22,6 +24,7 @@ closeNav.addEventListener('click', function() {
 });
 */
 
+/*
 // Create game image gallery
 const currentImage = document.querySelector('#current');
 const imageGallery = document.querySelectorAll('.review-gallery-image');
@@ -83,3 +86,65 @@ function validateForm(e) {
 }
 
 signUpForm.addEventListener('submit', validateForm);
+
+const slideImages = document.querySelectorAll('.slide-images');
+let currentSlide = 0;
+const arrowLeft = document.querySelector('#left-arrow');
+const arrowRight = document.querySelector('#right-arrow');
+
+function clearImages() {
+    slideImages.forEach(function(img) {
+        img.style.display = 'none';
+    });
+}
+
+// Right arrow controls
+function slideRight() {
+    clearImages();
+    slideImages[currentSlide + 1].style.display = 'block';
+    currentSlide++;
+}
+
+// Left arrow controls
+function leftSlide() {
+    clearImages();
+    slideImages[currentSlide - 1].style.display = 'block';
+    currentSlide--;
+}
+
+// Left arrow click
+arrowLeft.addEventListener('click', function() {
+    if(currentSlide === 0) {
+        currentSlide = slideImages.length;
+    }
+    leftSlide();
+});
+
+// Right arrow click
+arrowRight.addEventListener('click', function() {
+    if(currentSlide === slideImages.length - 1) {
+        currentSlide = -1;
+    }
+    slideRight();
+});
+
+// Get the first image
+function startSlides() {
+    clearImages();
+
+    slideImages[0].style.display = 'block';
+
+    /*currentSlide++;
+
+    if(currentSlide > slideImages.length) {
+       currentSlide = 1;
+    }
+
+    slideImages[currentSlide - 1].style.display = 'block';
+    
+    setTimeout(startSlides, 4000);
+}
+
+// Call slides
+startSlides();
+*/
