@@ -91,7 +91,6 @@ a {
     width: 3%;
     display: none;
     cursor: pointer;
-    z-index: 10000;
 }
 
 .line {
@@ -848,7 +847,7 @@ input {
         position: absolute;
         right: 0;
         top: 0;
-        width: 10%;
+        width: 7%;
         height: 100%;
         padding: 15px 10px;
     }
@@ -885,5 +884,33 @@ input {
         position: absolute;
         right: 30px;
         top: 0;
+    }
+
+    #review-gallery,
+    .review-body-wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .review-body-wrap {
+        margin: 2%;
+    }
+
+    .review-gallery-image {
+        flex: 20%;
+        margin-left: 2%;
+    }
+
+    .review-gallery-image:first-child {
+        margin-left: 0;
+    }
+
+    .review-side {
+        flex: 20%;
+    }
+
+    .review-body-content {
+        flex: 75%;
+        margin-left: 5%;
     }
 }
