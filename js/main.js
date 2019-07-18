@@ -1,13 +1,22 @@
-const hamburgerMenu = document.querySelector('.hamburger-menu');
-const mainNav = document.querySelector('.main-nav');
-const closeNav = document.querySelector('.close');
+// JQUERY DROP DOWN HAMBURGER MENU ON CLICK
+$('.hamburger-menu').bind('click touchstart', function(){
+    $('.main-nav').slideDown();
+  });
 
-hamburgerMenu.onclick = function () {}
-
-hamburgerMenu.addEventListener('click touchstart', function() {
-    mainNav.style.display = 'block';
+$('.close').bind('click touchstart', function() {
+    $('.main-nav').slideUp();
 });
 
-closeNav.addEventListener('click touchstart', function() {
-        mainNav.style.display = 'none';
+// JQUERY CHANGE IMG SRC ON CLICK
+$('.review-gallery-image').bind('click touchstart', function() {
+    $('#current').attr('src', $('.review-gallery-image'));
+});
+
+$('.small-image').bind('click touchstart', function() {
+    var largeImage = $(this).attr('src');
+    $('#large-image').attr('src',largeImage);
+    $('#large-image').addClass('fade-in');
+    setTimeout(function() {
+        document.querySelector('#large-image').classList.remove('fade-in')
+    }, 500);
 });
