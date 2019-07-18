@@ -10,7 +10,7 @@ $('.close').bind('click touchstart', function() {
 // JQUERY CHANGE IMG SRC ON CLICK
 $('.review-gallery-image').bind('click touchstart', function() {
     $('#current').attr('src', $('.review-gallery-image'));
-});*/
+});
 
 $('.small-image').bind('click touchstart', function() {
     var largeImage = $(this).attr('src');
