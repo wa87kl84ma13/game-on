@@ -1,18 +1,16 @@
-// JQUERY DROP DOWN HAMBURGER MENU ON CLICK
-$('.hamburger-menu').bind('click touchstart', function(){
-    $('.main-nav').slideDown();
-  });
+// Open and close hamburger menu for mobile devices
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+const mainNav = document.querySelector('.main-nav');
+const closeNav = document.querySelector('.close');
 
-$('.close').bind('click touchstart', function() {
-    $('.main-nav').slideUp();
-});
+function hideMenu(e) {
+    if(mainNav.style.display === 'block') {
+        mainNav.style.display = 'none';
+    } else {
+        mainNav.style.display = 'block';
+    }
 
-// JQUERY CHANGE IMG SRC ON CLICK
-$('.small-image').bind('click touchstart', function() {
-    var largeImage = $(this).attr('src');
-    $('#large-image').attr('src',largeImage);
-    $('#large-image').addClass('fade-in');
-    setTimeout(function() {
-        document.querySelector('#large-image').classList.remove('fade-in')
-    }, 500);
-});
+    e.preventDefault();
+}
+
+hamburgerMenu.addEventListener('click', hideMenu);
