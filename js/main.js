@@ -1,42 +1,87 @@
-// Open and close hamburger menu for mobile/tablet devices
-const hamburgerMenu = document.querySelector('.hamburger-menu');
-const mainNav = document.querySelector('.main-nav');
+const hamburger = document.querySelector('#hamburger-menu');
+const nav = document.querySelector('.main-nav');
 const closeNav = document.querySelector('.close');
 
-function hideMenu(e) {
-    if(mainNav.style.display === 'block') {
-        mainNav.style.display = 'none';
+function openMenu() {
+    if(nav.style.display === 'block') {
+        nav.style.display = 'none';
     } else {
-        mainNav.style.display = 'block';
+        nav.style.display = 'block';
     }
-
-    e.preventDefault();
 }
 
-hamburgerMenu.addEventListener('click', hideMenu);
+hamburger.addEventListener('click', openMenu);
 
-closeNav.addEventListener('click', function(e) {
-    mainNav.style.display = 'none';
+// Show search bar when icon is clicked
+const searchIcon = document.querySelector('#search-icon');
+const searchBar = document.querySelector('.search-bar-wrap');
+const closeSearch = document.querySelector('#close-search');
 
-    e.preventDefault();
-});
-
-// Create image gallery
-const largeImage = document.querySelector('#large-image');
-const smallImages = document.querySelectorAll('.small-image');
-
-function selectedImage(e) {
-    largeImage.src = e.target.src;
-
-    largeImage.classList.add('fade-in');
-
-    setTimeout(function() {
-        largeImage.classList.remove('fade-in');
-    }, 500);
-
-    e.preventDefault();
+function openSearch() {
+    if(searchBar.style.display === 'block') {
+        searchBar.style.display = 'none';
+    } else {
+        searchBar.style.display = 'block';
+    }
 }
 
-smallImages.forEach(function(img) {
-    img.addEventListener('click', selectedImage);
+searchIcon.addEventListener('click', openSearch);
+
+// Banner slideshow
+const sliderImages = document.querySelectorAll('.banner-image');
+let currentImage = 0;
+const leftArrow = document.querySelector('#arrow-left');
+const rightArrow = document.querySelector('#arrow-right');
+
+$('#arrow-left').on('click', function() {
+    $(".banner-image").fadeIn("slow");
 });
+
+$('#arrow-right').on('click', function() {
+    $(".banner-image").fadeIn("slow");
+});
+
+// Clear images
+function clearImages() {
+    for(let i = 0; i < sliderImages.length; i++) {
+        sliderImages[i].style.display = 'none';
+    }
+}
+
+// Start slide and get first image
+function startSlide() {
+    clearImages();
+    sliderImages[0].style.display = 'block';
+}
+
+// Slide left
+function slideLeft() {
+    clearImages();
+    sliderImages[currentImage - 1].style.display = 'block';
+    currentImage--;
+}
+
+// Slide right
+function slideRight() {
+    clearImages();
+    sliderImages[currentImage + 1].style.display = 'block';
+    currentImage++;
+}
+
+// Click left arrow to slide
+leftArrow.addEventListener('click', function() {
+    if(currentImage === 0) {
+        currentImage = sliderImages.length;
+    }
+    slideLeft();
+});
+
+// Click right arrow to slide
+rightArrow.addEventListener('click', function() {
+    if(currentImage === sliderImages.length - 1) {
+        currentImage = -1;
+    }
+    slideRight();
+});
+
+startSlide();
