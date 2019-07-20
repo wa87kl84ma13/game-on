@@ -14,3 +14,9 @@ function hideMenu(e) {
 }
 
 hamburgerMenu.addEventListener('click', hideMenu);
+
+closeNav.addEventListener('click', function(e) {
+    mainNav.style.display = 'none';
+
+    e.preventDefault();
+});
