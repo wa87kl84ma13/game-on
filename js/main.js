@@ -1,87 +1,98 @@
-const hamburger = document.querySelector('#hamburger-menu');
-const nav = document.querySelector('.main-nav');
+// Open and close hamburger menu for mobile devices
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+const mainNav = document.querySelector('.main-nav');
 const closeNav = document.querySelector('.close');
 
-function openMenu() {
-    if(nav.style.display === 'block') {
-        nav.style.display = 'none';
+hamburgerMenu.addEventListener('click', function() {
+    mainNav.style.display = 'block';
+});
+
+closeNav.addEventListener('click', function() {
+        mainNav.style.display = 'none';
+});
+
+// JQUERY EQUIVALENT EVENT LISTENER CLICK
+/*
+$('.hamburger-menu').bind('click touchstart', function(){
+    $('.main-nav').slideDown();
+  });
+
+$('.close').bind('click touchstart', function() {
+    $('.main-nav').slideUp();
+});
+*/
+
+
+// Create game image gallery
+const currentImage = document.querySelector('#current');
+const imageGallery = document.querySelectorAll('.review-gallery-image');
+
+function selectedImage(e) {
+    currentImage.src = e.target.src;
+
+    currentImage.classList.add('fade-in');
+
+    setTimeout(() => currentImage.classList.remove('fade-in'), 500);
+}
+
+imageGallery.forEach(img => img.addEventListener('click', selectedImage));
+
+//JQUERY CHANGE IMG SRC ON CLICK
+/*
+$('.small-image').bind('click touchstart', function() {
+    var largeImage = $(this).attr('src');
+    $('#large-image').attr('src',largeImage);
+    $('#large-image').addClass('fade-in');
+    setTimeout(function() {
+        document.querySelector('#large-image').classList.remove('fade-in')
+    }, 500);
+});
+*/
+
+// Close modal
+const closeModalBox = document.querySelector('.close-modal-sign-up');
+
+function closeModal() {
+    signUpModal.style.display = 'none';
+}
+
+closeModalBox.addEventListener('click', closeModal);
+
+// Sign up modal
+const signUpModal = document.querySelector('#modal');
+const signUp = document.querySelector('#sign-up');
+const thankYouModal = document.querySelector('#thank-you-modal');
+
+function loadModal() {
+    signUpModal.style.display = 'block';
+    if (window.matchMedia("(min-width: 320px) and (max-width: 768px)").matches) {
+         mainNav.style.display = 'none';
     } else {
-        nav.style.display = 'block';
+        console.log('error');
     }
 }
 
-hamburger.addEventListener('click', openMenu);
+signUp.addEventListener('click', loadModal);
 
-// Show search bar when icon is clicked
-const searchIcon = document.querySelector('#search-icon');
-const searchBar = document.querySelector('.search-bar-wrap');
-const closeSearch = document.querySelector('#close-search');
+// Form validation
+const signUpForm = document.querySelector('#form');
+const email = document.querySelector('#email');
+const password = document.querySelector('#password');
+const errorMessage = document.querySelector('#error');
+const success = document.querySelector('#success');
 
-function openSearch() {
-    if(searchBar.style.display === 'block') {
-        searchBar.style.display = 'none';
+function validateForm(e) {
+    if(email.value === '' || password.value === '') {
+        errorMessage.innerHTML = 'Please fill in the fields';
+        errorMessage.classList.add('error-message');
+        setTimeout(() => errorMessage.remove(), 4000);
     } else {
-        searchBar.style.display = 'block';
+        thankYouModal.style.display = 'block';
+        signUpModal.style.display = 'none';
+        setTimeout(() => thankYouModal.remove(), 6000);
     }
+
+    e.preventDefault();
 }
 
-searchIcon.addEventListener('click', openSearch);
-
-// Banner slideshow
-const sliderImages = document.querySelectorAll('.banner-image');
-let currentImage = 0;
-const leftArrow = document.querySelector('#arrow-left');
-const rightArrow = document.querySelector('#arrow-right');
-
-$('#arrow-left').on('click', function() {
-    $(".banner-image").fadeIn("slow");
-});
-
-$('#arrow-right').on('click', function() {
-    $(".banner-image").fadeIn("slow");
-});
-
-// Clear images
-function clearImages() {
-    for(let i = 0; i < sliderImages.length; i++) {
-        sliderImages[i].style.display = 'none';
-    }
-}
-
-// Start slide and get first image
-function startSlide() {
-    clearImages();
-    sliderImages[0].style.display = 'block';
-}
-
-// Slide left
-function slideLeft() {
-    clearImages();
-    sliderImages[currentImage - 1].style.display = 'block';
-    currentImage--;
-}
-
-// Slide right
-function slideRight() {
-    clearImages();
-    sliderImages[currentImage + 1].style.display = 'block';
-    currentImage++;
-}
-
-// Click left arrow to slide
-leftArrow.addEventListener('click', function() {
-    if(currentImage === 0) {
-        currentImage = sliderImages.length;
-    }
-    slideLeft();
-});
-
-// Click right arrow to slide
-rightArrow.addEventListener('click', function() {
-    if(currentImage === sliderImages.length - 1) {
-        currentImage = -1;
-    }
-    slideRight();
-});
-
-startSlide();
+signUpForm.addEventListener('submit', validateForm);
