@@ -1,7 +1,7 @@
 // Open and close hamburger menu for mobile devices
-const hamburgerMenu = document.querySelector('.hamburger-menu');
-const mainNav = document.querySelector('.main-nav');
-const closeNav = document.querySelector('.close');
+var hamburgerMenu = document.querySelector('.hamburger-menu');
+var mainNav = document.querySelector('.main-nav');
+var closeNav = document.querySelector('.close');
 
 hamburgerMenu.addEventListener('click', function() {
     mainNav.style.display = 'block';
@@ -24,8 +24,8 @@ $('.close').bind('click touchstart', function() {
 
 
 // Create game image gallery
-const currentImage = document.querySelector('#large-image');
-const imageGallery = document.querySelectorAll('.small-image');
+var currentImage = document.querySelector('#large-image');
+var imageGallery = document.querySelectorAll('.small-image');
 
 function selectedImage(e) {
     currentImage.src = e.target.src;
