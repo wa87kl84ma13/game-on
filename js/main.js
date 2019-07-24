@@ -33,10 +33,10 @@ function selectedImage(e) {
     currentImage.classList.add('fade-in');
 
     setTimeout(function() {
-        currentImage.classList.remove('fade-in')
+        return currentImage.classList.remove('fade-in')
     }, 4000);
 }
 
 imageGallery.forEach(function(img) {
-    img.addEventListener('click', selectedImage);
+    return img.addEventListener('click', selectedImage);
 });
